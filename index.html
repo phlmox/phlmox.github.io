@@ -49,7 +49,7 @@
             </div>
         </div>
         <div class="content">
-            <div class="container bg-white pt-5" style="text-align:center;">
+            <div class="container pt-5" style="text-align:center;">
                 <h1>Acknowledgements</h1><br><br>
                 <ul style="list-style: none;">
                     <li><i class="fas fa-star"></i>&nbsp;<a class="lnk" target="_blank"
@@ -61,8 +61,8 @@
                     <li><i class="fas fa-star"></i>&nbsp;<a class="lnk" target="_blank"
                             href="https://hackerone.com/deptofdefense/thanks">U.S. Dept Of Defense (Hall Of Fame)</a>
                     </li>
-                    <li><i class="fas fa-star"></i>&nbsp;<a class="lnk" target="_blank"
-                            href="certs/belasting.PNG">Belastingdienst Nederland (Letter of Appreciation)</a></li>
+                    <li><i class="fas fa-star"></i>&nbsp;<a class="lnk modal-target" href="javascript:void(0);"
+                            img="certs/belasting.PNG">Belastingdienst Nederland (Letter of Appreciation)</a></li>
                     <li><i class="fas fa-star"></i>&nbsp;<a class="lnk" target="_blank"
                             href="https://twitter.com/EnesSaltk7/status/1400457151882031114">Arduino (Swag)</a></li>
                     <li><i class="fas fa-star"></i>&nbsp;<a class="lnk" target="_blank"
@@ -72,11 +72,11 @@
                             href="https://hackerone.com/sony/thanks/2021?type=team">Sony (Hall Of Fame 2021)</a></li>
                     <li><i class="fas fa-star"></i>&nbsp;<a class="lnk" target="_blank"
                             href="https://www.nokia.com/responsible-disclosure/">Nokia (Hall Of Fame 2021)</a></li>
-                    <li><i class="fas fa-star"></i>&nbsp;<a class="lnk" target="_blank"
-                            href="certs/cambridge.PNG">University of Cambridge (Appreciation Letter)</a></li>
-                    <li><i class="fas fa-star"></i>&nbsp;<a class="lnk" target="_blank" href="certs/harvard.PNG">Harvard
+                    <li><i class="fas fa-star"></i>&nbsp;<a class="lnk modal-target" href="javascript:void(0);"
+                            img="certs/cambridge.PNG">University of Cambridge (Appreciation Letter)</a></li>
+                    <li><i class="fas fa-star"></i>&nbsp;<a class="lnk modal-target" href="javascript:void(0);" img="certs/harvard.PNG">Harvard
                             University (Appreciation Letter)</a></li>
-                    <li><i class="fas fa-star"></i>&nbsp;<a class="lnk" target="_blank" href="certs/eset.PNG">ESET
+                    <li><i class="fas fa-star"></i>&nbsp;<a class="lnk modal-target" href="javascript:void(0);" img="certs/eset.PNG">ESET
                             (Acknowledgement Letter)</a></li>
                     <li><i class="fas fa-star"></i>&nbsp;<a class="lnk" target="_blank"
                             href="https://www.bbc.com/backstage/security-disclosure-policy/acknowledgements/">BBC (Hall
@@ -109,7 +109,11 @@
             <!-- Footer End -->
         </div>
     </div>
-
+    <div id="modal" class="modal">
+        <span id="modal-close" class="modal-close">&times;</span>
+        <img id="modal-content" class="modal-content">
+        <div id="modal-caption" class="modal-caption"></div>
+      </div>
     <!-- Back to Top -->
     <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
@@ -125,6 +129,28 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+                        // Modal Setup
+                var modal = document.getElementById('modal');
+
+                var modalClose = document.getElementById('modal-close');
+                modalClose.addEventListener('click', function() { 
+                modal.style.display = "none";
+                });
+
+                // global handler
+                document.addEventListener('click', function (e) { 
+                if (e.target.className.indexOf('modal-target') !== -1) {
+                var img = e.target;
+                var modalImg = document.getElementById("modal-content");
+                var captionText = document.getElementById("modal-caption");
+                modal.style.display = "block";
+                modalImg.src = img.getAttribute('img');
+                captionText.innerHTML = img.alt;
+                }
+                });
+
+    </script>
 </body>
 
 </html>
