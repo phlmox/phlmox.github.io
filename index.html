@@ -49,7 +49,7 @@
             padding-top: 20px;
         }
 
-        .social-links a {
+        a {
             display: inline-block;
             margin: 0 10px;
             color: #00FF00;
@@ -58,14 +58,18 @@
             transition: color 0.3s ease;
         }
 
-        .social-links a:hover {
+        a:hover {
             color: #FFFFFF;
         }
 
-        .social-links a:not(:last-child)::after {
+        a:not(:last-child)::after {
             content: " | ";
             color: #00FF00;
         }
+		
+		.blink{
+			animation: fadeInOut 3s infinite;
+		}
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
@@ -100,7 +104,8 @@
             <a target="_blank" href="https://www.linkedin.com/in/enes-salt%C4%B1k-b04834201/">LinkedIn</a>
             <a target="_blank" href="https://hackerone.com/phlm0x">Hackerone</a>
             <a target="_blank" href="https://github.com/phlmox">GitHub</a>
-        </div>
+        </div><br>
+		<a class="blink" href="mailto:me@enessaltik.com">me@enessaltik.com</a>
     </div>
 
     <!-- Proudly made by ChatGPT -->
